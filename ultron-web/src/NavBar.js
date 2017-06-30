@@ -10,18 +10,14 @@ import {
 class NavBar extends Component {
 
   render() {
-    var linkStyle = {
-      margin: '20px'
-    };
-
     return (
 
       <div className="App-header">
 
         <div className='links'>
-          <a style={linkStyle}>Home</a>
-          <a>|</a>
-          <a className='aboutLink' style={linkStyle}>History</a>
+          <a href={"http://www.google.com"}>Home</a>
+          <text> | </text>
+          <a href={"http://www.google.com"}>History</a>
 
 
         </div>
