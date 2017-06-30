@@ -1,1 +1,23 @@
 # Ultron Server
+
+## Architecture
+
+There are two main interfaces into the Ultron services layer: translation service and metadata service.
+The Translation service allows clients to open a websocket connection, which allows for the streaming of
+audio and text content. The metadata service allows clients to retrieve or delete saved translations, as
+well as view other information about the translation.
+
+### Translation Service
+
+Live translation is supported through web sockets using [socket.io][socketio].
+Clients must stream audio content as an `m3u` file and plain text will be returned as it is made available by
+the backing [speech-to-text service][msft cognitive services].
+
+[socketio]: https://www.npmjs.com/package/socket.io
+[msft cognitive services]: https://docs.microsoft.com/en-us/azure/cognitive-services/speech/api-reference-rest/bingvoicerecognition
+
+### Metadata Service
+
+Specific translation information is available via a REST API. Documentation for the API is available [here][swagger].
+
+[swagger]: metadata_service_swagger.json
