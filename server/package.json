@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "s3-upload-stream": "^1.0.7"
+  }
+}
