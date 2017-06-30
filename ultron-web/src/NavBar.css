@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Questrial|Quicksand|Raleway|Yrsa');
+
+.App-header{
+  background-color: black;
+}
+.links { 
+
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 10px;
+    margin: 10px;
+    color: white;
+    word-spacing: 15px;
+  
+    
+}
+
+.links a:hover{
+  color: lightcoral;
+}
+
+.links a:any-link{
+  color: white;
+}
+
+
+.links a:visited {
+  color: white;
+  text-decoration: none;
+}

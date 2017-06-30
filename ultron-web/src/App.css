@@ -1,24 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Questrial|Quicksand|Raleway|Yrsa');
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: auto;
+
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.App-header{
+  background-color: black;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
 
 .App-intro {
-  font-size: large;
+  background-color: lightblue;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.title{
+  color: #4a4a4a;
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+  letter-spacing: 2px;
+  padding-top: 10px;
+}
+
+.text-container{
+  height: 500px;
+  width: 500px;
+  border: 2px solid #4a4a4a;
+  text-align: left;
+  flex: 1;
+  align-self: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.content{
+  height: 95%;
+  padding: 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: justify;
+  overflow: auto;
+}
+
+.button{
+  padding: 10px;
+  margin: 5px;
+}
+.buttons{
+  flex: 2;
+  padding-left: 300px;
+  
 }
