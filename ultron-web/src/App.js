@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './NavBar.js';
 import { Button } from 'antd';
+import { ReactMic } from 'react-mic';
 
 class App extends Component {
   constructor(props) {
@@ -9,13 +10,17 @@ class App extends Component {
     this.state = {
       text: [],
       listening: false,
-      showSaveButton: false
+      showSaveButton: false,
+      record: false,
+      recording: null,
+      dataObject: {}
     }
   }
   handleStartClick() {
     this.setState({
       ...this.state,
-      listening: true
+      listening: true,
+      record: true
 
     })
   };
@@ -24,10 +29,30 @@ class App extends Component {
     this.setState({
       ...this.state,
       listening: false,
-      showSaveButton: true
+      showSaveButton: true,
+      record: false
     })
   };
 
+  onStop(recordedBlob) {
+    console.log('recordedBlob is: ', recordedBlob)
+    this.setState({
+      ...this.state,
+      recording: recordedBlob
+    });
+  };
+
+
+  //unfinished function
+  //intention: create an m3u file or audio file to be stored
+  //in whatever database is integrated
+  onSaveClick() {
+    this.setState({
+      ...this.state,
+
+
+    });
+  }
 
 
 
@@ -37,7 +62,7 @@ class App extends Component {
 
     if (this.state.showSaveButton) {
       saveButton = (
-        <Button type="primary">Save</Button>
+        <Button type="primary" >Save</Button>
       );
     }
 
@@ -62,6 +87,18 @@ class App extends Component {
             </text>
 
           </div>
+        </div>
+
+        <div className="reactMic">
+          <ReactMic
+            record={this.state.record}
+            className="sound=wave"
+            stokeColor="#000000"
+            backgroundColor="lightgrey"
+            onStop={this.onStop}
+          >
+
+          </ReactMic>
         </div>
 
         <div className="buttons">
